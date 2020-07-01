@@ -31,7 +31,9 @@ let password = ''
     waitUntil: 'networkidle2',
   })
   let btn = await page.$('.sign-btn')
-  btn && (await page.click('.sign-btn'))
+  if (btn) {
+    await page.click('.sign-btn')
+  }
   await browser.close()
   console.log('签到结束')
 })()
